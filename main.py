@@ -3,9 +3,7 @@ from datetime import datetime, timedelta
 import config
 import text_constants
 from database_communication import DataBase
-
-
-# from time import sleep
+from time import sleep
 
 
 def log_message(user_id, message: str, is_from_user: bool, encoding="utf-8"):
@@ -285,6 +283,7 @@ def text_messages(message: telebot.types.Message):
                                  parse_mode="MARKDOWN")
             except:
                 errors += 1
+            sleep(0.3)
             counter += 1
         message_text_from_bot = f"Сообщение отправлено пользователям ({counter - errors}/{counter})"
         bot.send_message(message.from_user.id, message_text_from_bot,
@@ -509,6 +508,7 @@ def photo_messages(message: telebot.types.Message):
                                parse_mode="MARKDOWN")
             except:
                 errors += 1
+            sleep(0.3)
             counter += 1
         message_text_from_bot = f"Сообщение отправлено пользователям ({counter - errors}/{counter})"
         bot.send_message(message.from_user.id, message_text_from_bot,

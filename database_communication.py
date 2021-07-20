@@ -14,7 +14,7 @@ def generate_alphanum_random_string(length):
 class DataBase:
     def __init__(self):
         self.client = pymongo.MongoClient(config.DB_CONNECT_LINK)
-        self.db = self.client.TelegramBotBS
+        self.db = self.client[config.DB_NAME]
 
     def update_userinfo_user(self, user_id, username, first_name, last_name):
         user_data = self.check_user_is_registered(user_id)
@@ -68,7 +68,7 @@ class DataBase:
         self.db.bot_settings.update_one({"setting_id": 0}, {'$set': settings}, upsert=True)
 
     def configurate_db(self):
-        db.set_bot_settings(True, True)
+        self.set_bot_settings(True, True)
 
     def close_connection(self):
         self.client.close()
