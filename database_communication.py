@@ -78,13 +78,8 @@ class DataBase:
 if __name__ == "__main__":
     db = DataBase()
     db.set_bot_settings(True, True)
-    # for i in range(30):
-    #    db.update_userinfo_user(random.randint(1234,1252435), f"randname{random.randint(123,342)}", "Andrey", "")
-    # print(db.get_all_users())
-    # print(db.get_bot_settings())
+
     """product_id = db.insert_product(category="Пятёрочка", product_name="100-200",
                                    image_id="AgACAgIAAxkBAAIG8WDscBQzfZldARgj_aLy-9VkE_eGAAIKuDEbLzVgS0YivakP3UtFAQADAgADeAADIAQ",
                                    text="Промокод пятёрочки на сумму от 100 до 200 бонусов", is_service=False, added_by_id=391257848,
                                    is_individual=False, price=60, amount=14, is_eproduct=True, is_display=False)["product_id"]"""
-    # db.get_all_products()
-    # db.get_product_by_product_id(product_id)
